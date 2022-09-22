@@ -1,0 +1,69 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #bg {
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      
+      /* Preserve aspet ratio */
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .text-block {
+      position:absolute;
+      bottom:250px;
+      right: 540px;
+     
+      
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  </style>
+</head>
+<body>
+  <img   alt="Snow" id="bg"  src='static\4.jpg'>
+  <div class="container">
+  <h3 style="text-align:center;">Salary Estimation</h3>
+  
+  <form method="post" action="{{url_for('sal')}}">
+    <div class="container">
+      <div class="text-block">
+        <div class="col-auto">
+          <label class="form-label" style="color:black;">Enter the Year of Exp</label>
+          <input type="text" onkeypress="return onlyNumberKey(event)" 
+          maxlength="3" class="form-control" aria-describedby="Year" name="year">
+          <button type="submit" class="btn btn-primary"  value="predict">Submit</button>
+        </div>
+      </div>
+    
+    
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
+
+  
+
+  <script>
+    
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
